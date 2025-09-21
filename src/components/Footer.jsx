@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { SparklesIcon, MapPinIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
 
 const Footer = () => {
@@ -6,28 +7,28 @@ const Footer = () => {
 
   const footerLinks = {
     products: [
-      { name: 'Bamboo Toothbrushes', href: '#products' },
-      { name: 'Professional Kits', href: '#products' },
-      { name: 'Eco-Friendly Floss', href: '#products' },
-      { name: 'Travel Kits', href: '#products' },
-      { name: 'Kids Products', href: '#products' },
-      { name: 'Custom Branding', href: '#products' }
+      { name: 'Bamboo Toothbrushes', href: '/products' },
+      { name: 'Professional Kits', href: '/products' },
+      { name: 'Eco-Friendly Floss', href: '/products' },
+      { name: 'Travel Kits', href: '/products' },
+      { name: 'Kids Products', href: '/products' },
+      { name: 'Custom Branding', href: '/products' }
     ],
     company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Sustainability', href: '#about' },
-      { name: 'Our Mission', href: '#about' },
-      { name: 'Contact', href: '#contact' },
-      { name: 'Custom Quotes', href: '#contact' },
-      { name: 'Bulk Orders', href: '#contact' }
+      { name: 'About Us', href: '/about' },
+      { name: 'Sustainability', href: '/about' },
+      { name: 'Our Mission', href: '/about' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Custom Quotes', href: '/contact' },
+      { name: 'Bulk Orders', href: '/contact' }
     ],
     support: [
-      { name: 'Product Information', href: '#contact' },
-      { name: 'Shipping Info', href: '#contact' },
-      { name: 'Returns', href: '#contact' },
-      { name: 'FAQ', href: '#contact' },
-      { name: 'Professional Support', href: '#contact' },
-      { name: 'Sustainability Guide', href: '#about' }
+      { name: 'Product Information', href: '/contact' },
+      { name: 'Shipping Info', href: '/contact' },
+      { name: 'Returns', href: '/contact' },
+      { name: 'FAQ', href: '/contact' },
+      { name: 'Professional Support', href: '/contact' },
+      { name: 'Sustainability Guide', href: '/about' }
     ]
   }
 
@@ -67,12 +68,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.products.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -84,12 +85,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -101,12 +102,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.support.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

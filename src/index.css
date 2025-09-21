@@ -41,4 +41,34 @@ body {
   .card {
     @apply bg-white shadow rounded-lg overflow-hidden;
   }
+
+  /* Hero Section Animations */
+  .animate-slowZoom {
+    animation: slowZoom 20s ease-in-out infinite alternate;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+  }
+}
+
+/* Custom Keyframes */
+@keyframes slowZoom {
+  from { 
+    transform: scale(1.05); 
+  }
+  to { 
+    transform: scale(1.1); 
+  }
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }

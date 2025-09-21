@@ -1,43 +1,25 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Hero from './components/Hero'
-import Products from './components/Products'
-import About from './components/About'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
-import QueryForm from './components/QueryForm'
+import Home from './pages/Home'
+import Products from './pages/Products'
+import About from './pages/About'
+import Contact from './pages/Contact'
 
 function App() {
-  const [isQueryFormOpen, setIsQueryFormOpen] = useState(false)
-  const [selectedProduct, setSelectedProduct] = useState(null)
-
-  const openQueryForm = (product = null) => {
-    setSelectedProduct(product)
-    setIsQueryFormOpen(true)
-  }
-
-  const closeQueryForm = () => {
-    setIsQueryFormOpen(false)
-    setSelectedProduct(null)
-  }
-
   return (
     <div className="min-h-screen bg-white">
       <Header />
       <main>
-        <Hero onQueryClick={() => openQueryForm()} />
-        <Products onQueryClick={openQueryForm} />
-        <About />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
       <Footer />
-      
-      {isQueryFormOpen && (
-        <QueryForm 
-          product={selectedProduct}
-          onClose={closeQueryForm}
-        />
-      )}
     </div>
   )
 }
