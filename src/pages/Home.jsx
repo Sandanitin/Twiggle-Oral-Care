@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Hero from '../components/Hero';
 import { 
   CheckIcon, 
@@ -16,6 +17,8 @@ import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 
 const Home = () => {
+  const navigate = useNavigate();
+  
   const features = [
     "Stylish and Comfortable",
     "Naturally Antimicrobial", 
@@ -142,11 +145,7 @@ const Home = () => {
   }, []);
 
   const handleBuyNow = () => {
-    setSelectedProduct({
-      name: "Maple Wood Toothbrush",
-      id: "maple-wood-toothbrush"
-    });
-    setIsQueryFormOpen(true);
+    navigate('/products');
   };
 
   const closeQueryForm = () => {
@@ -206,7 +205,7 @@ const Home = () => {
        Switch to bamboo toothbrushes and join the movement towards a plastic-free future with OLA Cycle.
      </p>
      <button 
-       onClick={() => window.location.href = '/products'}
+       onClick={() => navigate('/products')}
        className="bg-primary-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 shadow-lg flex items-center gap-2 mx-auto"
      >
        <ShoppingBagIcon className="w-5 h-5" />
@@ -451,7 +450,7 @@ const Home = () => {
 
           <div className="mt-10 text-center">
             <button 
-              onClick={() => window.location.href = '/products'}
+              onClick={() => navigate('/products')}
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-primary-600 bg-white hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 border-2 border-primary-600 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
               aria-label="View all products"
             >
@@ -530,7 +529,7 @@ const Home = () => {
               {/* Call-to-Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
-                  onClick={() => window.location.href = '/products'}
+                  onClick={() => navigate('/products')}
                   className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
                   aria-label="Shop eco-friendly bamboo toothbrushes"
                 >
@@ -587,7 +586,7 @@ const Home = () => {
                  </div>
                </div>
                <button 
-                 onClick={() => window.location.href = '/about'}
+                 onClick={() => navigate('/about')}
                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer mx-auto lg:mx-0 w-fit"
                >
                  OUR STORY
