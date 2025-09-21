@@ -8,57 +8,49 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      name: '4-Pack Bamboo Brushes',
-      price: '24.99',
+      name: '4-Pack Bamboo Toothbrushes - OLA Cycle',
       imageUrl: '/images/project/WhatsApp Image 2025-09-12 at 11.26.43.jpeg',
       category: 'bestseller'
     },
     {
       id: 2,
-      name: 'Family Pack (6 Brushes)',
-      price: '34.99',
+      name: 'Economy Pack of 8 Bamboo Toothbrushes',
       imageUrl: '/images/project/WhatsApp Image 2025-09-12 at 11.26.44 (1).jpeg',
       category: 'popular'
     },
     {
       id: 3,
-      name: 'Kids Bamboo Brushes',
-      price: '19.99',
+      name: 'Kids Bamboo Toothbrushes',
       imageUrl: '/images/project/WhatsApp Image 2025-09-12 at 11.26.43 (3).jpeg',
       category: 'kids'
     },
     {
       id: 4,
-      name: 'Travel Set',
-      price: '29.99',
+      name: 'Bamboo Travel Set',
       imageUrl: '/images/project/WhatsApp Image 2025-09-12 at 11.27.32.jpeg',
       category: 'travel'
     },
     {
       id: 5,
-      name: 'Charcoal Infused Brushes',
-      price: '27.99',
+      name: 'Bamboo Dental Floss',
       imageUrl: '/images/project/WhatsApp Image 2025-09-13 at 12.05.44.jpeg',
       category: 'premium'
     },
     {
       id: 6,
-      name: 'Sensitive Care Pack',
-      price: '26.99',
+      name: 'Bamboo Cotton Swabs',
       imageUrl: '/images/project/WhatsApp Image 2025-09-13 at 12.05.35.jpeg',
       category: 'sensitive'
     },
     {
       id: 7,
       name: 'Bamboo & Charcoal Duo',
-      price: '22.99',
       imageUrl: '/images/project/WhatsApp Image 2025-09-12 at 11.26.43 (3).jpeg',
       category: 'bundle'
     },
     {
       id: 8,
-      name: 'Eco Starter Kit',
-      price: '39.99',
+      name: 'Eco Starter Kit - Bamboo Collection',
       imageUrl: '/images/project/WhatsApp Image 2025-09-12 at 11.27.32.jpeg',
       category: 'bundle'
     }
@@ -81,9 +73,9 @@ const Products = () => {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Toothbrushes</h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">Bamboo Toothbrushes - OLA Cycle</h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Eco-friendly bamboo toothbrushes for a cleaner smile and a healthier planet
+              Sustainable bamboo toothbrushes and eco-friendly oral care products for a cleaner smile and a healthier planet
             </p>
           </div>
 
@@ -106,8 +98,7 @@ const Products = () => {
               {/* Product Info */}
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex-grow">
-                  <h3 className="text-lg font-medium text-gray-900 mb-1">{product.name}</h3>
-                  <p className="text-2xl font-bold text-gray-900 mb-4">${product.price} CAD</p>
+                  <h3 className="text-lg font-medium text-gray-900 mb-4">{product.name}</h3>
                 </div>
                 
                 <button
@@ -115,7 +106,7 @@ const Products = () => {
                   className="mt-4 w-full flex items-center justify-center px-4 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700 transition-colors duration-200"
                 >
                   <ShoppingCartIcon className="h-5 w-5 mr-2" />
-                  Add to Cart
+                  buy now
                 </button>
               </div>
             </div>

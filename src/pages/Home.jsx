@@ -9,7 +9,8 @@ import {
   ArrowRightIcon,
   ShoppingBagIcon,
   PlayIcon,
-  PauseIcon
+  PauseIcon,
+  XMarkIcon
 } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
@@ -26,37 +27,41 @@ const Home = () => {
 
   const bestSellers = [
     {
-      name: "4-Pack maple wood toothbrush - OLA Cycle",
-      price: "$18.99 CAD",
+      name: "4-Pack Bamboo Toothbrushes - OLA Cycle",
       image: "/images/project/WhatsApp Image 2025-09-12 at 11.26.43.jpeg",
-      badge: "Best Seller"
+      badge: "Best Seller",
+      reviews: 29,
     },
     {
-      name: "Economy Pack of 8 OLA Cycle toothbrushes", 
-      price: "$30.99 CAD",
+      name: "Economy Pack of 8 Bamboo Toothbrushes", 
       image: "/images/project/WhatsApp Image 2025-09-12 at 11.26.44 (1).jpeg",
-      badge: "Hot Deal"
+      badge: "Hot Deal",
+      reviews: 74,
     },
     {
-      name: "Eco-Friendly Dental Floss",
-      price: "$5.99 CAD", 
+      name: "Bamboo Dental Floss",
       image: "/images/project/WhatsApp Image 2025-09-13 at 12.05.44.jpeg",
-      badge: "New"
+      badge: "New",
+      reviews: 97,
     },
     {
       name: "Bamboo Cotton Swabs",
-      price: "$4.99 CAD",
       image: "/images/project/WhatsApp Image 2025-09-12 at 11.27.32.jpeg",
+      badge: "Eco-Friendly",
+      reviews: 64,
     },
     {
-      name: "Natural deodorant - Cucumber and Aloe Vera",
-      price: "$9.99 CAD",
+      name: "Natural Bamboo Deodorant",
       image: "/images/project/WhatsApp Image 2025-09-13 at 12.05.35.jpeg",
+      badge: "Organic",
+      reviews: 74,
     }
   ]
 
   const [hoveredCard, setHoveredCard] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isQueryFormOpen, setIsQueryFormOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const featureItems = [
     {
@@ -136,46 +141,83 @@ const Home = () => {
     setIsVisible(true);
   }, []);
 
+  const handleBuyNow = () => {
+    setSelectedProduct({
+      name: "Maple Wood Toothbrush",
+      id: "maple-wood-toothbrush"
+    });
+    setIsQueryFormOpen(true);
+  };
+
+  const closeQueryForm = () => {
+    setIsQueryFormOpen(false);
+    setSelectedProduct(null);
+  };
+
+  const handleSubmitInquiry = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Form submitted', selectedProduct);
+    closeQueryForm();
+  };
+
+  const handleLearnMore = () => {
+    const element = document.getElementById('maple-wood-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const openQueryForm = (product) => {
+    setSelectedProduct(product);
+    setIsQueryFormOpen(true);
+  };
+
   // ===== Main Render =====
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative flex flex-col items-center justify-center text-center py-24 h-screen overflow-hidden">
-        {/* Background Image */}
-        <img
-          src="/images/project/WhatsApp Image 2025-09-13 at 12.05.52.jpeg"
-          alt="Eco-friendly bamboo oral care products flat lay"
-          className="absolute inset-0 w-full h-full object-cover scale-105 animate-slowZoom"
-          loading="eager"
-        />
-        
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/20" />
-        
-        {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
-            Eco-Friendly Oral Care<br/>
-            <span className="text-primary-400">
-              <TypeAnimation
-                sequence={['Sustainable', 2000, 'Affordable', 2000, 'Innovative', 2000]}
-                speed={50}
-                repeat={Infinity}
-              />
-            </span>
-          </h1>
-          <p className="text-lg md:text-xl text-gray-200 max-w-xl mx-auto mb-8 leading-relaxed">
-            Join the movement towards a plastic-free future with our eco-conscious products.
-          </p>
-          <button className="bg-primary-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 shadow-lg flex items-center gap-2 mx-auto">
-            <ShoppingBagIcon className="w-5 h-5" />
-            Shop Now
-          </button>
-        </div>
-      </section>
+     {/* Hero */}
+<section className="relative flex flex-col items-center justify-center text-center py-24 min-h-[70vh] overflow-hidden">
+  {/* Background Image */}
+  <img
+    src="/images/project/hero.png"
+    alt="Eco-friendly bamboo oral care products flat lay"
+    className="absolute inset-0 w-full h-full object-cover object-center scale-100 animate-slowZoom"
+    loading="eager"
+  />
+  
+  {/* Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/20" />
+  
+  {/* Content */}
+  <div className="relative z-10 max-w-xl mx-auto px-6 sm:px-8">
+     <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
+       Bamboo Toothbrushes<br/>
+       <span className="text-primary-400">
+         <TypeAnimation
+           sequence={['Sustainable', 2000, 'Eco-Friendly', 2000, 'Biodegradable', 2000]}
+           speed={50}
+           repeat={Infinity}
+         />
+       </span>
+     </h1>
+     <p className="text-lg md:text-xl text-gray-200 max-w-xl mx-auto mb-8 leading-relaxed">
+       Switch to bamboo toothbrushes and join the movement towards a plastic-free future with OLA Cycle.
+     </p>
+     <button 
+       onClick={() => window.location.href = '/products'}
+       className="bg-primary-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 shadow-lg flex items-center gap-2 mx-auto"
+     >
+       <ShoppingBagIcon className="w-5 h-5" />
+       Shop Now
+     </button>
+  </div>
+</section>
+
 
       {/* Maple Wood */}
-      <section className="py-20 bg-white">
+      <section id="maple-wood-section" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text Content */}
@@ -220,30 +262,25 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Call-to-Action Button */}
+              {/* Call-to-Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
+                  onClick={handleBuyNow}
                   className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
                   aria-label="Buy maple wood toothbrush now"
                 >
                   Buy Now
                   <ArrowRightIcon className="ml-2 h-5 w-5" />
                 </button>
-                <button 
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-primary-600 bg-white hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 border-2 border-primary-600 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
-                  aria-label="Learn more about maple wood toothbrush"
-                >
-                  Learn More
-                </button>
               </div>
 
-              {/* Price Display */}
+              {/* Features Display */}
               <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-sm text-gray-600 mb-1">Starting from</div>
-                    <div className="text-3xl font-bold text-primary-600">$18.99 CAD</div>
-                    <div className="text-sm text-gray-500">4-Pack Available</div>
+                    <div className="text-sm text-gray-600 mb-1">Available</div>
+                    <div className="text-3xl font-bold text-primary-600">4-Pack</div>
+                    <div className="text-sm text-gray-500">Maple Wood</div>
                   </div>
                   <div className="text-right">
                     <div className="text-sm text-gray-600">Free Shipping</div>
@@ -335,9 +372,7 @@ const Home = () => {
 
                   {/* Content */}
                   <div className="px-6 pb-6 h-full flex flex-col">
-                    <h3 className="text-base font-semibold text-gray-900 mb-3 text-center group-hover:text-primary-600 transition-colors duration-300">
-                      {feature.title}
-                    </h3>
+                    <h3 className="text-base font-semibold text-gray-900 mb-3">{feature.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow text-center">
                       {feature.description}
                     </p>
@@ -362,28 +397,11 @@ const Home = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* Bottom CTA */}
-          <motion.div 
-            className="text-center mt-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ 
-              opacity: isVisible ? 1 : 0, 
-              y: isVisible ? 0 : 30 
-            }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            <div className="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-primary-600 to-green-600 text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <SparklesIcon className="w-6 h-6" />
-              <span className="text-lg font-semibold">Discover Our Full Range</span>
-              <ArrowRightIcon className="w-5 h-5" />
-            </div>
-          </motion.div>
         </div>
       </section>
 
       {/* Best Sellers */}
-      <section className="py-16 bg-gray-50">
+      <section id="products" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -397,48 +415,48 @@ const Home = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {bestSellers.map((product, index) => (
               <motion.div 
-                key={index} 
-                whileHover={{ scale: 1.03 }} 
-                className="group relative bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
+                key={index}
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.3 }}
+                className="bg-white rounded-xl shadow-md overflow-hidden group cursor-pointer flex flex-col h-full"
+                onClick={() => openQueryForm(product)}
               >
-                {product.badge && (
-                  <span className="absolute top-3 left-3 bg-primary-600 text-white text-xs px-3 py-1 rounded-full shadow">
-                    {product.badge}
-                  </span>
-                )}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative w-full aspect-square overflow-hidden">
                   <img 
                     src={product.image} 
-                    alt={product.name} 
+                    alt={product.name}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                    className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute bottom-4 right-4">
-                    <button className="bg-white text-gray-900 px-4 py-2 rounded-full shadow hover:bg-gray-50 transition">
-                      Add to Cart
-                    </button>
-                  </div>
+                  {product.badge && (
+                    <span className="absolute top-4 right-4 bg-primary-100 text-primary-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                      {product.badge}
+                    </span>
+                  )}
                 </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">{product.name}</h3>
-                  <p className="text-primary-600 font-bold">{product.price}</p>
-                  <div className="mt-4 flex items-center">
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{product.name}</h3>
+                  <div className="mt-auto flex items-center">
                     {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                      <svg key={i} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
-                    <span className="text-gray-500 text-sm ml-2">(24)</span>
+                    <span className="text-gray-500 text-sm ml-2">({product.reviews})</span>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition">
+          <div className="mt-10 text-center">
+            <button 
+              onClick={() => window.location.href = '/products'}
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-primary-600 bg-white hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 border-2 border-primary-600 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+              aria-label="View all products"
+            >
               View All Products
-              <ArrowRightIcon className="ml-2 -mr-1 w-5 h-5" />
+              <ArrowRightIcon className="ml-2 h-5 w-5" />
             </button>
           </div>
         </div>
@@ -512,17 +530,12 @@ const Home = () => {
               {/* Call-to-Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
+                  onClick={() => window.location.href = '/products'}
                   className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
                   aria-label="Shop eco-friendly bamboo toothbrushes"
                 >
                   Shop Now
                   <ArrowRightIcon className="ml-2 h-5 w-5" />
-                </button>
-                <button 
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-primary-600 bg-white hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 border-2 border-primary-600 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
-                  aria-label="Learn more about our products"
-                >
-                  Learn More
                 </button>
               </div>
 
@@ -537,31 +550,134 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[500px]">
-            {/* Left Side - Text Content */}
-            <div className="flex flex-col justify-center text-center lg:text-left">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-                Une entreprise fièrement québécoise
-              </h2>
-              <button className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer mx-auto lg:mx-0 w-fit">
-                NOTRE HISTOIRE
-                <ArrowRightIcon className="ml-2 h-5 w-5" />
-              </button>
-            </div>
+             {/* Left Side - Text Content */}
+             <div className="flex flex-col justify-center text-center lg:text-left">
+               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+                 A Proudly Quebec-Based Company
+               </h2>
+               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                 Founded in Quebec in 2019, Twiggle Oral Care was born from a simple yet powerful vision: 
+                 to revolutionize oral hygiene by creating durable and eco-friendly bamboo toothbrushes. 
+                 Our passionate Quebec team works every day to deliver sustainable solutions that respect 
+                 our environment.
+               </p>
+               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                 From Montreal to Quebec City, we are proud to contribute to the local economy while 
+                 promoting a more sustainable lifestyle. Every Twiggle Oral Care product is designed with 
+                 Quebec expertise and a deep commitment to environmental responsibility.
+               </p>
+               <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                 <div className="flex items-center gap-3">
+                   <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                     <span className="text-primary-600 font-bold">🇨🇦</span>
+                   </div>
+                   <span className="text-gray-700 font-medium">100% Quebec-Made</span>
+                 </div>
+                 <div className="flex items-center gap-3">
+                   <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                     <span className="text-green-600 font-bold">🌱</span>
+                   </div>
+                   <span className="text-gray-700 font-medium">100% Eco-Friendly</span>
+                 </div>
+                 <div className="flex items-center gap-3">
+                   <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                     <span className="text-blue-600 font-bold">💚</span>
+                   </div>
+                   <span className="text-gray-700 font-medium">100% Passion-Driven</span>
+                 </div>
+               </div>
+               <button 
+                 onClick={() => window.location.href = '/about'}
+                 className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer mx-auto lg:mx-0 w-fit"
+               >
+                 OUR STORY
+                 <ArrowRightIcon className="ml-2 h-5 w-5" />
+               </button>
+             </div>
 
-            {/* Right Side - Image */}
-            <div className="order-first lg:order-last">
-              <div className="relative h-96 lg:h-[500px]">
-                <img
-                  src="/images/project/ceo.png"
-                  alt="Quebec company showcasing eco-friendly products"
-                  className="w-full h-full object-cover rounded-2xl"
-                  loading="lazy"
-                />
-              </div>
-            </div>
+             {/* Right Side - Image */}
+             <div className="order-first lg:order-last">
+               <div className="relative h-96 lg:h-[500px]">
+                 <img
+                   src="/images/project/ceo.png"
+                   alt="Entreprise québécoise OLA Cycle - Brosses à dents en bambou"
+                   className="w-full h-full object-cover rounded-2xl"
+                   loading="lazy"
+                 />
+                 {/* Quebec Flag Badge */}
+                 <div className="absolute top-4 left-4 bg-white px-4 py-2 rounded-full shadow-lg">
+                   <span className="text-sm font-semibold text-primary-600">🇨🇦 Québec</span>
+                 </div>
+                 {/* Eco Badge */}
+                 <div className="absolute top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-full shadow-lg">
+                   <span className="text-sm font-semibold">🌱 Écologique</span>
+                 </div>
+                 {/* Decorative Elements */}
+                 <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-primary-100 rounded-full opacity-60"></div>
+                 <div className="absolute top-1/2 -right-8 w-16 h-16 bg-green-100 rounded-full opacity-40"></div>
+               </div>
+             </div>
           </div>
         </div>
       </section>
+
+      {/* Query Form Modal */}
+      {isQueryFormOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-xl max-w-md w-full p-6 relative">
+            <button
+              onClick={closeQueryForm}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-500"
+            >
+              <span className="sr-only">Close</span>
+              <XMarkIcon className="h-6 w-6" />
+            </button>
+            
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Inquire about {selectedProduct?.name}</h3>
+            <form className="space-y-4" onSubmit={handleSubmitInquiry}>
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+                <textarea
+                  id="message"
+                  rows={4}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+                  placeholder="Your message or questions about this product..."
+                  defaultValue={selectedProduct ? `I'm interested in the ${selectedProduct.name}.` : ''}
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+              >
+                Send Inquiry
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+      
+      {/* ... rest of the JSX ... */}
     </div>
   );
 };

@@ -20,29 +20,29 @@ const Hero = ({ onQueryClick }) => {
        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/20" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 h-full flex items-center">
-        <div className="space-y-10 text-white max-w-2xl animate-fadeIn">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 h-full flex items-center">
+        <div className="space-y-10 text-white max-w-xl animate-fadeIn">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-600/20 text-primary-300 backdrop-blur-sm shadow-md">
             <SparklesIcon className="h-5 w-5" />
             <span className="text-sm font-medium tracking-wide">
-              Eco-Friendly Oral Care
+              Bamboo Toothbrushes - OLA Cycle
             </span>
           </div>
 
           {/* Headline */}
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">
-            Sustainable
-            <span className="text-primary-400"> Smiles</span>
+            Bamboo
+            <span className="text-primary-400"> Toothbrushes</span>
             <br />
-            for a Better
-            <span className="text-primary-400"> Tomorrow</span>
+            for a
+            <span className="text-primary-400"> Sustainable Future</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-xl">
-            Discover our premium bamboo toothbrushes and eco-friendly oral care products. 
-            Made with sustainability in mind, designed for dental professionals and conscious consumers.
+            Switch to our premium bamboo toothbrushes and eco-friendly oral care products. 
+            Made with sustainability in mind, designed for conscious consumers and dental professionals.
           </p>
 
           {/* Buttons */}
