@@ -6,54 +6,14 @@ const Products = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const products = [
-    {
-      id: 1,
-      name: '4-Pack Bamboo Toothbrushes - OLA Cycle',
-      imageUrl: '/images/project/WhatsApp Image 2025-09-12 at 11.26.43.jpeg',
-      category: 'bestseller'
-    },
-    {
-      id: 2,
-      name: 'Economy Pack of 8 Bamboo Toothbrushes',
-      imageUrl: '/images/project/WhatsApp Image 2025-09-12 at 11.26.44 (1).jpeg',
-      category: 'popular'
-    },
-    {
-      id: 3,
-      name: 'Kids Bamboo Toothbrushes',
-      imageUrl: '/images/project/WhatsApp Image 2025-09-12 at 11.26.43 (3).jpeg',
-      category: 'kids'
-    },
-    {
-      id: 4,
-      name: 'Bamboo Travel Set',
-      imageUrl: '/images/project/WhatsApp Image 2025-09-12 at 11.27.32.jpeg',
-      category: 'travel'
-    },
-    {
-      id: 5,
-      name: 'Bamboo Dental Floss',
-      imageUrl: '/images/project/WhatsApp Image 2025-09-13 at 12.05.44.jpeg',
-      category: 'premium'
-    },
-    {
-      id: 6,
-      name: 'Bamboo Cotton Swabs',
-      imageUrl: '/images/project/WhatsApp Image 2025-09-13 at 12.05.35.jpeg',
-      category: 'sensitive'
-    },
-    {
-      id: 7,
-      name: 'Bamboo & Charcoal Duo',
-      imageUrl: '/images/project/WhatsApp Image 2025-09-12 at 11.26.43 (3).jpeg',
-      category: 'bundle'
-    },
-    {
-      id: 8,
-      name: 'Eco Starter Kit - Bamboo Collection',
-      imageUrl: '/images/project/WhatsApp Image 2025-09-12 at 11.27.32.jpeg',
-      category: 'bundle'
-    }
+    { id: 1, name: 'Twiggle Green', imageUrl: '/images/project/Twiggle green .jpg', tag: '1 Unit' },
+    { id: 2, name: 'Twiggle Charcoal', imageUrl: '/images/project/Twiggle charcoal.jpg', tag: '1 Unit' },
+    { id: 3, name: 'Twiggle Fresh', imageUrl: '/images/project/Twiggle fresh.jpg', tag: '1 Unit' },
+    { id: 4, name: 'Twiggle Natural', imageUrl: '/images/project/Twiggle Natural.jpg', tag: '1 Unit' },
+    { id: 5, name: 'Twiggle Rouge', imageUrl: '/images/project/Twiggle rouge.jpg', tag: '1 Unit' },
+    { id: 6, name: 'Twiggle White', imageUrl: '/images/project/Twiggle white.jpg', tag: '1 Unit' },
+    { id: 7, name: 'Kids Bamboo Toothbrush', imageUrl: '/images/project/Kids bamboo toothbrush.jpg', tag: 'Coming Soon', comingSoon: true },
+    { id: 8, name: 'Custom Branding Package', imageUrl: '/images/project/Custom branding package.jpg', tag: 'Bundle' }
   ];
 
   const openQueryForm = (product) => {
@@ -73,9 +33,9 @@ const Products = () => {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Bamboo Toothbrushes - OLA Cycle</h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Products</h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Sustainable bamboo toothbrushes and eco-friendly oral care products for a cleaner smile and a healthier planet
+              Single-unit bamboo toothbrushes in curated variants, plus a custom branding package for clinics.
             </p>
           </div>
 
@@ -84,7 +44,7 @@ const Products = () => {
           {products.map((product) => (
             <div 
               key={product.id}
-              className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col h-full"
+              className={`bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col h-full ${product.comingSoon ? 'opacity-70' : ''}`}
             >
               {/* Product Image */}
               <div className="relative w-full bg-gray-100 flex items-center justify-center p-4">
@@ -93,6 +53,16 @@ const Products = () => {
                   alt={product.name}
                   className="max-h-64 w-auto max-w-full object-contain"
                 />
+                {product.tag && (
+                  <span className="absolute top-4 right-4 bg-primary-100 text-primary-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                    {product.tag}
+                  </span>
+                )}
+                {product.comingSoon && (
+                  <span className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-gray-900/80 text-white text-xs font-medium px-2.5 py-1 rounded-full">
+                    Coming Soon
+                  </span>
+                )}
               </div>
               
               {/* Product Info */}
@@ -102,11 +72,12 @@ const Products = () => {
                 </div>
                 
                 <button
-                  onClick={() => openQueryForm(product)}
-                  className="mt-4 w-full flex items-center justify-center px-4 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700 transition-colors duration-200"
+                  onClick={() => !product.comingSoon && openQueryForm(product)}
+                  disabled={product.comingSoon}
+                  className={`mt-4 w-full flex items-center justify-center px-4 py-3 rounded-md shadow-sm text-base font-medium transition-colors duration-200 ${product.comingSoon ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'text-white bg-green-600 hover:bg-green-700'}`}
                 >
                   <ShoppingCartIcon className="h-5 w-5 mr-2" />
-                  buy now
+                  {product.comingSoon ? 'Coming Soon' : 'Buy Now'}
                 </button>
               </div>
             </div>

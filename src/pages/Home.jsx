@@ -30,35 +30,54 @@ const Home = () => {
 
   const bestSellers = [
     {
-      name: "4-Pack Bamboo Toothbrushes - OLA Cycle",
-      image: "/images/project/WhatsApp Image 2025-09-12 at 11.26.43.jpeg",
-      badge: "Best Seller",
-      reviews: 29,
+      name: "Twiggle Green",
+      image: "/images/project/Twiggle green .jpg",
+      badge: "1 Unit",
+      reviews: 12,
     },
     {
-      name: "Economy Pack of 8 Bamboo Toothbrushes", 
-      image: "/images/project/WhatsApp Image 2025-09-12 at 11.26.44 (1).jpeg",
-      badge: "Hot Deal",
-      reviews: 74,
+      name: "Twiggle Charcoal",
+      image: "/images/project/Twiggle charcoal.jpg",
+      badge: "1 Unit",
+      reviews: 8,
     },
     {
-      name: "Bamboo Dental Floss",
-      image: "/images/project/WhatsApp Image 2025-09-13 at 12.05.44.jpeg",
-      badge: "New",
-      reviews: 97,
+      name: "Twiggle Fresh",
+      image: "/images/project/Twiggle fresh.jpg",
+      badge: "1 Unit",
+      reviews: 10,
     },
     {
-      name: "Bamboo Cotton Swabs",
-      image: "/images/project/WhatsApp Image 2025-09-12 at 11.27.32.jpeg",
-      badge: "Eco-Friendly",
-      reviews: 64,
+      name: "Twiggle Natural",
+      image: "/images/project/Twiggle Natural.jpg",
+      badge: "1 Unit",
+      reviews: 7,
     },
     {
-      name: "Natural Bamboo Deodorant",
-      image: "/images/project/WhatsApp Image 2025-09-13 at 12.05.35.jpeg",
-      badge: "Organic",
-      reviews: 74,
-    }
+      name: "Twiggle Rouge",
+      image: "/images/project/Twiggle rouge.jpg",
+      badge: "1 Unit",
+      reviews: 9,
+    },
+    {
+      name: "Twiggle White",
+      image: "/images/project/Twiggle white.jpg",
+      badge: "1 Unit",
+      reviews: 6,
+    },
+    {
+      name: "Kids Bamboo Toothbrush",
+      image: "/images/project/Kids bamboo toothbrush.jpg",
+      badge: "Coming Soon",
+      reviews: 0,
+      comingSoon: true,
+    },
+    {
+      name: "Custom Branding Package",
+      image: "/images/project/Custom branding package.jpg",
+      badge: "Bundle",
+      reviews: 15,
+    },
   ]
 
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -75,8 +94,8 @@ const Home = () => {
           className="w-20 h-20 object-cover rounded-full border-2 border-gray-200"
         />
       ),
-      title: "Stylish and Comfortable",
-      description: "Sleek, ergonomic design for a comfortable and effective brushing experience",
+      title: "Dentist Approved and Recommended",
+      description: "Trusted by dental professionals for comfort, quality, and effective cleaning",
       bgGradient: "from-gray-50 to-white",
       stats: "98% Comfort Rating",
       color: "gray"
@@ -117,8 +136,8 @@ const Home = () => {
           className="w-20 h-20 object-cover rounded-full border-2 border-gray-200"
         />
       ),
-      title: "Bamboo Untouched by Pandas",
-      description: "Ethically sourced from sustainable bamboo forests, never from panda habitats",
+      title: "Bamboo chosen with care",
+      description: "Cruelty-free, eco-safe, and planet-friendly sourcing",
       bgGradient: "from-gray-50 to-white",
       stats: "Certified Sustainable",
       color: "gray"
@@ -131,8 +150,8 @@ const Home = () => {
           className="w-20 h-20 object-cover rounded-full border-2 border-gray-200"
         />
       ),
-      title: "Reduced Plastic Waste",
-      description: "Join us in preventing millions of plastic toothbrushes from polluting our oceans",
+      title: "A step towards plastic free living",
+      description: "Make a simple daily switch that cuts plastic from your routine",
       bgGradient: "from-gray-50 to-white",
       stats: "3 Plastic Brushes Saved",
       color: "gray"
@@ -180,7 +199,7 @@ const Home = () => {
 <section className="relative flex flex-col items-center justify-center text-center py-24 min-h-[70vh] overflow-hidden">
   {/* Background Image */}
   <img
-    src="/images/project/hero.png"
+    src="/images/hero.png"
     alt="Eco-friendly bamboo oral care products flat lay"
     className="absolute inset-0 w-full h-full object-cover object-center scale-100 animate-slowZoom"
     loading="eager"
@@ -191,18 +210,13 @@ const Home = () => {
   
   {/* Content */}
   <div className="relative z-10 max-w-xl mx-auto px-6 sm:px-8">
-     <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
-       Bamboo Toothbrushes<br/>
-       <span className="text-primary-400">
-         <TypeAnimation
-           sequence={['Sustainable', 2000, 'Eco-Friendly', 2000, 'Biodegradable', 2000]}
-           speed={50}
-           repeat={Infinity}
-         />
-       </span>
+     <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight drop-shadow-lg">
+       <span className="block text-primary-300">Brush Clean. Live Green.</span>
+       <span className="block text-white/90">Promote Your Practice with</span>
+       <span className="inline-block mt-2 px-3 py-1 rounded-md bg-white/5 text-white border border-white/15 shadow-sm">Twiggle-oral-care</span>
      </h1>
      <p className="text-lg md:text-xl text-gray-200 max-w-xl mx-auto mb-8 leading-relaxed">
-       Switch to bamboo toothbrushes and join the movement towards a plastic-free future with OLA Cycle.
+       Switch to bamboo toothbrushes for a plastic-free future with OLA Cycle.
      </p>
      <button 
        onClick={() => navigate('/products')}
@@ -224,19 +238,19 @@ const Home = () => {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium">
                 <SparklesIcon className="w-4 h-4" />
-                <span>Premium Maple Wood</span>
+                <span>For Dental Clinics</span>
               </div>
 
               {/* Main Heading */}
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                Maple Wood
-                <span className="block text-primary-600">Toothbrush</span>
+                Elevate Your Patient Experience
               </h2>
 
               {/* Description */}
               <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
-                Discover the only toothbrush in the world from the circular economy. We recover wood scraps from a guitar factory 
-                to transform them into premium toothbrush handles. Experience the perfect blend of sustainability and craftsmanship.
+                Partner with Twiggle Oral Care to offer premium bamboo toothbrushes customized with your clinic’s branding.
+                Provide eco-friendly, high-quality oral care products that your patients will love — while reinforcing your
+                commitment to sustainability.
               </p>
 
               {/* Features List */}
@@ -245,19 +259,25 @@ const Home = () => {
                   <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center">
                     <CheckIcon className="w-4 h-4 text-primary-600" />
                   </div>
-                  <span className="text-gray-700 font-medium">Made from recycled guitar factory scraps</span>
+                  <span className="text-gray-700 font-medium">Custom branding available for your dental office and corporates</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center">
                     <CheckIcon className="w-4 h-4 text-primary-600" />
                   </div>
-                  <span className="text-gray-700 font-medium">Unique circular economy approach</span>
+                  <span className="text-gray-700 font-medium">Premium bamboo handles with smooth, comfortable grip</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center">
                     <CheckIcon className="w-4 h-4 text-primary-600" />
                   </div>
-                  <span className="text-gray-700 font-medium">Premium maple wood finish</span>
+                  <span className="text-gray-700 font-medium">Soft, durable bristles for gentle and effective cleaning</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center">
+                    <CheckIcon className="w-4 h-4 text-primary-600" />
+                  </div>
+                  <span className="text-gray-700 font-medium">Eco-friendly and biodegradable, supporting a greener future</span>
                 </div>
               </div>
 
@@ -273,20 +293,7 @@ const Home = () => {
                 </button>
               </div>
 
-              {/* Features Display */}
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-sm text-gray-600 mb-1">Available</div>
-                    <div className="text-3xl font-bold text-primary-600">4-Pack</div>
-                    <div className="text-sm text-gray-500">Maple Wood</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm text-gray-600">Free Shipping</div>
-                    <div className="text-sm text-green-600 font-medium">✓ Eco-Friendly</div>
-                  </div>
-                </div>
-              </div>
+              {/* Features Display removed per request */}
             </div>
 
             {/* Right Side - Image */}
@@ -300,7 +307,7 @@ const Home = () => {
                 />
                 {/* Floating Badge */}
                 <div className="absolute -top-4 -right-4 bg-primary-600 text-white px-6 py-3 rounded-full shadow-lg">
-                  <span className="text-sm font-semibold">Maple Wood</span>
+                  <span className="text-sm font-semibold">Twiggle</span>
                 </div>
                 {/* Decorative Elements */}
                 <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-primary-100 rounded-full opacity-60"></div>
@@ -411,14 +418,14 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {bestSellers.map((product, index) => (
               <motion.div 
                 key={index}
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-xl shadow-md overflow-hidden group cursor-pointer flex flex-col h-full"
-                onClick={() => openQueryForm(product)}
+                    className={`bg-white rounded-xl shadow-md overflow-hidden group flex flex-col h-full ${product.comingSoon ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
+                    onClick={() => !product.comingSoon && openQueryForm(product)}
               >
                 <div className="relative w-full aspect-square overflow-hidden">
                   <img 
@@ -432,6 +439,11 @@ const Home = () => {
                       {product.badge}
                     </span>
                   )}
+                      {product.comingSoon && (
+                        <span className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-gray-900/80 text-white text-xs font-medium px-2.5 py-1 rounded-full">
+                          Coming Soon
+                        </span>
+                      )}
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{product.name}</h3>
@@ -469,8 +481,8 @@ const Home = () => {
             <div className="order-2 lg:order-1">
               <div className="relative">
                 <img
-                  src="/images/project/01 Twiggle Brush Mockup.jpg"
-                  alt="Woman brushing her teeth with eco-friendly bamboo toothbrush"
+                  src="/images/project/Custom branding package.jpg"
+                  alt="Custom branding package of Twiggle bamboo toothbrushes"
                   className="w-full h-96 lg:h-[500px] object-cover rounded-2xl shadow-2xl"
                   loading="lazy"
                 />
@@ -549,50 +561,42 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[500px]">
-             {/* Left Side - Text Content */}
-             <div className="flex flex-col justify-center text-center lg:text-left">
-               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-                 A Proudly Quebec-Based Company
-               </h2>
-               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                 Founded in Quebec in 2019, Twiggle Oral Care was born from a simple yet powerful vision: 
-                 to revolutionize oral hygiene by creating durable and eco-friendly bamboo toothbrushes. 
-                 Our passionate Quebec team works every day to deliver sustainable solutions that respect 
-                 our environment.
-               </p>
-               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                 From Montreal to Quebec City, we are proud to contribute to the local economy while 
-                 promoting a more sustainable lifestyle. Every Twiggle Oral Care product is designed with 
-                 Quebec expertise and a deep commitment to environmental responsibility.
-               </p>
-               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                 <div className="flex items-center gap-3">
-                   <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
-                     <span className="text-primary-600 font-bold">🇨🇦</span>
-                   </div>
-                   <span className="text-gray-700 font-medium">100% Quebec-Made</span>
-                 </div>
-                 <div className="flex items-center gap-3">
-                   <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                     <span className="text-green-600 font-bold">🌱</span>
-                   </div>
-                   <span className="text-gray-700 font-medium">100% Eco-Friendly</span>
-                 </div>
-                 <div className="flex items-center gap-3">
-                   <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                     <span className="text-blue-600 font-bold">💚</span>
-                   </div>
-                   <span className="text-gray-700 font-medium">100% Passion-Driven</span>
-                 </div>
-               </div>
-               <button 
-                 onClick={() => navigate('/about')}
-                 className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer mx-auto lg:mx-0 w-fit"
-               >
-                 OUR STORY
-                 <ArrowRightIcon className="ml-2 h-5 w-5" />
-               </button>
-             </div>
+            {/* Left Side - Text Content */}
+            <div className="flex flex-col justify-center text-center lg:text-left">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+                Discover the toothbrush that’s gentle on the planet.
+              </h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Our handles are made from responsibly sourced bamboo, crafted to deliver a premium brushing experience while supporting a
+                sustainable future. Experience the perfect blend of eco-conscious design and everyday comfort.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                    <CheckIcon className="text-primary-600 h-5 w-5" />
+                  </div>
+                  <span className="text-gray-700 font-medium">Made from responsibly sourced bamboo</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                    <CheckIcon className="text-primary-600 h-5 w-5" />
+                  </div>
+                  <span className="text-gray-700 font-medium">Eco-friendly, sustainable materials</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                    <CheckIcon className="text-primary-600 h-5 w-5" />
+                  </div>
+                  <span className="text-gray-700 font-medium">Premium smooth finish for comfort and style</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                    <CheckIcon className="text-primary-600 h-5 w-5" />
+                  </div>
+                  <span className="text-gray-700 font-medium">Crafted with care for you and the planet</span>
+                </div>
+              </div>
+            </div>
 
              {/* Right Side - Image */}
              <div className="order-first lg:order-last">
@@ -605,11 +609,11 @@ const Home = () => {
                  />
                  {/* Quebec Flag Badge */}
                  <div className="absolute top-4 left-4 bg-white px-4 py-2 rounded-full shadow-lg">
-                   <span className="text-sm font-semibold text-primary-600">🇨🇦 Québec</span>
+                 
                  </div>
                  {/* Eco Badge */}
                  <div className="absolute top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-full shadow-lg">
-                   <span className="text-sm font-semibold">🌱 Écologique</span>
+               
                  </div>
                  {/* Decorative Elements */}
                  <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-primary-100 rounded-full opacity-60"></div>

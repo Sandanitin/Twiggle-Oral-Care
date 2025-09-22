@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
+import { MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
 
 const Contact = () => {
   const contactInfo = [
@@ -10,23 +10,12 @@ const Contact = () => {
       description: "Serving clients across Canada"
     },
     {
-      icon: <PhoneIcon className="h-6 w-6 text-primary-600" />,
-      title: "Phone",
-      details: "(416) 555-0123",
-      description: "Mon-Fri 9AM-6PM EST"
-    },
-    {
       icon: <EnvelopeIcon className="h-6 w-6 text-primary-600" />,
       title: "Email",
-      details: "hello@twiggleoralcare.com",
+      details: "twiggleoralcare@gmail.com",
       description: "We'll respond within 24 hours"
     },
-    {
-      icon: <ClockIcon className="h-6 w-6 text-primary-600" />,
-      title: "Business Hours",
-      details: "Monday - Friday",
-      description: "9:00 AM - 6:00 PM EST"
-    }
+    
   ]
 
   return (
@@ -184,7 +173,7 @@ const Contact = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-primary-600">
+      <section className="py-16 bg-primary-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
             <h3 className="text-2xl font-bold mb-4">Ready to Go Green?</h3>
@@ -194,16 +183,33 @@ const Contact = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+14165550123"
-                className="bg-white text-primary-600 py-3 px-8 rounded-lg font-semibold hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600 transition-all duration-200"
+                href="mailto:twiggleoralcare@gmail.com"
+                className="bg-white text-primary-600 py-3 px-6 rounded-lg font-semibold hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600 transition-all duration-200 inline-flex items-center"
               >
-                Call Now: (416) 555-0123
+                <EnvelopeIcon className="h-5 w-5 mr-2" />
+                Email Us
               </a>
               <a
-                href="mailto:hello@twiggleoralcare.com"
-                className="border-2 border-white text-white py-3 px-8 rounded-lg font-semibold hover:bg-white hover:text-primary-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600 transition-all duration-200"
+                href="https://www.instagram.com/twiggleoralcare?igsh=aTczNzBrd2g4cXI1&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-2 border-white text-white py-3 px-6 rounded-lg font-semibold hover:bg-white hover:text-primary-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600 transition-all duration-200 inline-flex items-center"
               >
-                Email Us
+                <svg className="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5a4.5 4.5 0 110 9 4.5 4.5 0 010-9zm0 2a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM17.5 6.75a.75.75 0 110 1.5.75.75 0 010-1.5z"/>
+                </svg>
+                Instagram
+              </a>
+              <a
+                href="https://www.linkedin.com/in/twiggle-oral-care-0ba57237b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-2 border-white text-white py-3 px-6 rounded-lg font-semibold hover:bg-white hover:text-primary-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600 transition-all duration-200 inline-flex items-center"
+              >
+                <svg className="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v15H0V8zm7.5 0h4.8v2.1h.07c.67-1.2 2.3-2.46 4.73-2.46 5.06 0 6 3.33 6 7.66V23H18V16.2c0-1.62-.03-3.71-2.26-3.71-2.27 0-2.62 1.77-2.62 3.6V23H7.5V8z" />
+                </svg>
+                LinkedIn
               </a>
             </div>
           </div>

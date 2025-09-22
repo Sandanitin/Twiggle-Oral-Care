@@ -1,6 +1,5 @@
 import React from 'react'
 import { SparklesIcon, GlobeAltIcon, HeartIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
-import ImpactSection from '../components/ImpactSection'
 
 const About = () => {
   const values = [
@@ -40,18 +39,16 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              About <span className="text-primary-600">Twiggle Oral Care</span>
+              From our hearts as <span className="text-primary-600">Dentists</span>, to the planet we share
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Leading provider of eco-friendly oral care products for dental professionals 
-              and conscious consumers across Canada.
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              Twiggle Oral Care was founded by three young dentists — a couple with a shared vision, joined by a close friend — who believe that a healthier smile shouldn’t come at the cost of a healthier planet. This is especially true for plastic toothbrushes, which most people discard every three months. Each plastic toothbrush can take over 400 years to biodegrade, and with over 1 billion plastic toothbrushes thrown away each year in the U.S. and Canada alone, that’s a staggering amount of long-lasting waste.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Impact Section */}
-      <ImpactSection />
+      {/* Impact Section removed per request */}
 
       {/* Main Content */}
       <section className="py-20">
@@ -66,7 +63,7 @@ const About = () => {
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
                   Founded in Toronto, Ontario, Twiggle Oral Care is a leading provider of eco-friendly 
                   oral care products. We specialize in bamboo toothbrushes and sustainable oral care 
-                  solutions for both individual consumers and dental professionals.
+                  solutions for both corporate clients and dental professionals.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   Our mission is to revolutionize oral care by offering products that are not only 
@@ -132,8 +129,9 @@ const About = () => {
           <div className="text-center text-white">
             <h3 className="text-3xl font-bold mb-4">Committed to Sustainability</h3>
             <p className="text-xl text-primary-100 mb-8 max-w-4xl mx-auto">
-              Every product we create is designed with the environment in mind. From our bamboo 
-              toothbrushes to our biodegradable packaging, we're working towards a plastic-free future.
+              Our toothbrushes last 3–4 months for optimal oral care, and with our innovative design, the
+              handle can be composted or creatively reused, while the head is disposed of responsibly —
+              making sustainability simple and practical.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
