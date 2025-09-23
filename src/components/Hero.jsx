@@ -32,7 +32,7 @@ const Hero = ({ onQueryClick }) => {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight ">
             Bamboo
             <span className="text-primary-400"> Toothbrushes</span>
             <br />
@@ -53,21 +53,21 @@ const Hero = ({ onQueryClick }) => {
           <div className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={onQueryClick}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 shadow-lg hover:shadow-2xl hover:scale-[1.03] transition-all duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-primary-600 hover:bg-primary-700   hover:scale-[1.03] transition-all duration-200"
             >
               Get Custom Quote
               <ArrowRightIcon className="ml-2 h-5 w-5" />
             </button>
             <a
               href="#products"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-primary-600 bg-white hover:bg-primary-50 shadow-md hover:shadow-xl hover:scale-[1.03] transition-all duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-primary-600 bg-white hover:bg-primary-50  hover:shadow-xl hover:scale-[1.03] transition-all duration-200"
             >
               View Products
             </a>
           </div>
 
            {/* Stats with CountUp */}
-           <div className="grid grid-cols-3 divide-x divide-white/20 bg-white/10 backdrop-blur-md rounded-xl mt-10 shadow-lg border border-white/10">
+           <div className="grid grid-cols-3 divide-x divide-white/20 bg-white/10 backdrop-blur-md rounded-xl mt-10  border border-white/10">
              <div className="text-center p-6">
                <div className="text-3xl font-bold text-primary-400 mb-1">
                  <CountUp end={100} duration={3} />%

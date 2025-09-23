@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Hero from '../components/Hero';
-import {
-  CheckIcon,
-  SparklesIcon,
-  ShieldCheckIcon,
-  TrashIcon,
+import { 
+  CheckIcon, 
+  SparklesIcon, 
+  ShieldCheckIcon, 
+  TrashIcon, 
   MapPinIcon,
   ArrowRightIcon,
   ShoppingBagIcon,
@@ -18,10 +18,10 @@ import { TypeAnimation } from 'react-type-animation';
 
 const Home = () => {
   const navigate = useNavigate();
-
+  
   const features = [
     "Stylish and Comfortable",
-    "Naturally Antimicrobial",
+    "Naturally Antimicrobial", 
     "100% compostable handle",
     "Bamboo Untouched by Pandas",
     "Reduced plastic waste",
@@ -88,8 +88,8 @@ const Home = () => {
   const featureItems = [
     {
       icon: (
-        <img
-          src="/images/project/brush.png"
+        <img 
+          src="/images/project/brush.png" 
           alt="Stylish toothbrush"
           className="w-20 h-20 object-cover rounded-full border-2 border-gray-200"
         />
@@ -102,8 +102,8 @@ const Home = () => {
     },
     {
       icon: (
-        <img
-          src="/images/project/dental.png"
+        <img 
+          src="/images/project/dental.png" 
           alt="Antimicrobial bamboo toothbrush"
           className="w-20 h-20 object-cover rounded-full border-2 border-gray-200"
         />
@@ -116,8 +116,8 @@ const Home = () => {
     },
     {
       icon: (
-        <img
-          src="/images/project/cbrush.png"
+        <img 
+          src="/images/project/cbrush.png" 
           alt="Compostable toothbrush"
           className="w-20 h-20 object-cover rounded-full border-2 border-gray-200"
         />
@@ -130,8 +130,8 @@ const Home = () => {
     },
     {
       icon: (
-        <img
-          src="/images/project/bamboo.png"
+        <img 
+          src="/images/project/bamboo.png" 
           alt="Bamboo toothbrush"
           className="w-20 h-20 object-cover rounded-full border-2 border-gray-200"
         />
@@ -144,8 +144,8 @@ const Home = () => {
     },
     {
       icon: (
-        <img
-          src="/images/project/plastic.png"
+        <img 
+          src="/images/project/plastic.png" 
           alt="Eco-friendly dental floss"
           className="w-20 h-20 object-cover rounded-full border-2 border-gray-200"
         />
@@ -156,7 +156,7 @@ const Home = () => {
       stats: "3 Plastic Brushes Saved",
       color: "gray"
     },
-
+   
   ];
 
   useEffect(() => {
@@ -202,39 +202,49 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      {/* Hero */}
-      <section className="relative flex flex-col items-center justify-center text-center py-14 md:py-24 min-h-[60vh] md:min-h-[80vh] overflow-hidden">
+     {/* Hero */}
+    <section className="relative flex flex-col items-center justify-center text-center py-14 md:py-24 min-h-[60vh] md:min-h-[80vh] overflow-hidden">
         {/* Background Image */}
         <img
-         
           src="/images/project/hi.png"
           alt="Eco-friendly bamboo oral care products flat lay"
           className="absolute inset-0 w-full h-full object-cover object-center scale-100 animate-slowZoom"
           loading="eager"
         />
-
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/20" />
-
+        
+        {/* Gradient Overlay removed per request */}
+        
         {/* Content */}
-        <div className="relative z-10 right  px-4 sm:px-8">
-          <h1 className="text-2xl md:text-4xl font-extrabold text-white mb-4 md:mb-6 drop-shadow-lg">
-            <span className="text-primary-400">Brush Clean. Live Green.</span> <br />
-            Promote Your Practice <br />
-            with <br />
-            Twiggle-oral-care <br /> <span className="text-primary-400">
-              <TypeAnimation
-                sequence={['Sustainable', 2000, 'Affordable', 2000, 'Innovative', 2000]}
-                speed={50}
-                repeat={Infinity}
-              />
-            </span>
-          </h1>
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Image Collage (left) */}
+          <div className="hidden lg:block">
+            <div className="relative h-[360px]">
+             
+              
+            </div>
+          </div>
 
-          <button className="bg-primary-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 shadow-lg flex items-center gap-2 mx-auto">
-            <ShoppingBagIcon className="w-5 h-5" />
-            Shop Now
-          </button>
+          {/* Text (right) */}
+          <div className="max-w-xl ml-auto right ">
+            <h1 className="text-2xl md:text-4xl font-extrabold text-border lg:text-white mb-4 md:mb-6 drop-shadow-lg" style={{ fontFamily: 'Sunborn, sans-serif' }}>
+              <span className="block text-4xl md:text-5xl lg:text-4xl leading-tight text-primary-900 ">Brush Clean. Live Green.</span>
+              Promote Your Practice<br />
+              with<br />
+              Twiggle-oral-care<br />
+              <span className="text-primary-900">
+                <TypeAnimation
+                  sequence={['Sustainable', 2000, 'Affordable', 2000, 'Innovative', 2000]}
+                  speed={50}
+                  repeat={Infinity}
+                />
+              </span>
+            </h1>
+
+            <button className="bg-primary-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 shadow-lg inline-flex items-center gap-2 ml-auto">
+              <ShoppingBagIcon className="w-5 h-5" />
+              Shop Now
+            </button>
+          </div>
         </div>
       </section>
 
@@ -294,7 +304,7 @@ const Home = () => {
 
               {/* Call-to-Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button
+                <button 
                   onClick={handleBuyNow}
                   className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
                   aria-label="Buy maple wood toothbrush now"
@@ -313,7 +323,7 @@ const Home = () => {
                 <img
                   src="/images/project/01 Twiggle Brush Mockup.jpg"
                   alt="Woman brushing her teeth with maple wood toothbrush"
-
+                 
                   loading="lazy"
                 />
                 {/* Floating Badge */}
@@ -339,7 +349,7 @@ const Home = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
-          <motion.div
+          <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
@@ -363,15 +373,15 @@ const Home = () => {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
-                animate={{
-                  opacity: isVisible ? 1 : 0,
-                  y: isVisible ? 0 : 50
+                animate={{ 
+                  opacity: isVisible ? 1 : 0, 
+                  y: isVisible ? 0 : 50 
                 }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.1 
                 }}
-                whileHover={{
+                whileHover={{ 
                   y: -10,
                   transition: { duration: 0.3 }
                 }}
@@ -393,7 +403,7 @@ const Home = () => {
                     <p className="text-gray-600 text-xs md:text-sm leading-relaxed mb-3 md:mb-4 flex-grow text-center">
                       {feature.description}
                     </p>
-
+                
                     {/* Stats */}
                     <div className="mt-auto text-center">
                       <div className="inline-flex items-center px-2.5 md:px-3 py-1.5 md:py-2 rounded-full text-[10px] md:text-xs font-medium bg-gray-100 text-gray-700 group-hover:bg-primary-100 group-hover:text-primary-700 transition-colors duration-300">
@@ -429,18 +439,18 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {bestSellers.map((product, index) => (
-              <motion.div
+              <motion.div 
                 key={index}
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
-                className={`bg-white rounded-xl shadow-md overflow-hidden group flex flex-col h-full ${product.comingSoon ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
-                onClick={() => !product.comingSoon && openQueryForm(product)}
+                    className={`bg-white rounded-xl shadow-md overflow-hidden group flex flex-col h-full ${product.comingSoon ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
+                    onClick={() => !product.comingSoon && openQueryForm(product)}
               >
                 <div className="relative w-full aspect-square overflow-hidden">
-                  <img
-                    src={product.image}
+                  <img 
+                    src={product.image} 
                     alt={product.name}
                     loading="lazy"
                     className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
@@ -450,11 +460,11 @@ const Home = () => {
                       {product.badge}
                     </span>
                   )}
-                  {product.comingSoon && (
-                    <span className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-gray-900/80 text-white text-xs font-medium px-2.5 py-1 rounded-full">
-                      Coming Soon
-                    </span>
-                  )}
+                      {product.comingSoon && (
+                        <span className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-gray-900/80 text-white text-xs font-medium px-2.5 py-1 rounded-full">
+                          Coming Soon
+                        </span>
+                      )}
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{product.name}</h3>
@@ -472,7 +482,7 @@ const Home = () => {
           </div>
 
           <div className="mt-10 text-center">
-            <button
+            <button 
               onClick={() => navigate('/products')}
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-primary-600 bg-white hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 border-2 border-primary-600 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
               aria-label="View all products"
@@ -494,7 +504,7 @@ const Home = () => {
                 <img
                   src="/images/project/Custom branding package.jpg"
                   alt="Custom branding package of Twiggle bamboo toothbrushes"
-                  className="w-full h-96 lg:h-[500px] object-cover rounded-2xl"
+                  className="w-full h-96 lg:h-[500px] object-cover rounded-2xl shadow-2xl"
                   loading="lazy"
                 />
                 {/* Floating Badge */}
@@ -523,7 +533,7 @@ const Home = () => {
 
               {/* Description */}
               <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
-                Join thousands of satisfied customers who have made the switch to sustainable oral care.
+                Join thousands of satisfied customers who have made the switch to sustainable oral care. 
                 Our bamboo toothbrushes provide the same cleaning power you expect, while protecting our planet for future generations.
               </p>
 
@@ -551,7 +561,7 @@ const Home = () => {
 
               {/* Call-to-Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button
+                <button 
                   onClick={() => navigate('/products')}
                   className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
                   aria-label="Shop eco-friendly bamboo toothbrushes"
@@ -561,8 +571,8 @@ const Home = () => {
                 </button>
               </div>
 
-
-
+        
+            
             </div>
           </div>
         </div>
@@ -637,7 +647,7 @@ const Home = () => {
               <span className="sr-only">Close</span>
               <XMarkIcon className="h-6 w-6" />
             </button>
-
+            
             <h3 className="text-lg font-medium text-gray-900 mb-4">Inquire about {selectedProduct?.name}</h3>
             <form className="space-y-4" onSubmit={handleSubmitInquiry}>
               <div>
@@ -684,11 +694,10 @@ const Home = () => {
           </div>
         </div>
       )}
-
+      
       {/* ... rest of the JSX ... */}
     </div>
   );
 };
 
 export default Home;
-
