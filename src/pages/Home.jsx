@@ -117,7 +117,7 @@ const Home = () => {
     {
       icon: (
         <img 
-          src="/images/project/100%brush.png" 
+          src="/images/project/cbrush.png" 
           alt="Compostable toothbrush"
           className="w-20 h-20 object-cover rounded-full border-2 border-gray-200"
         />
