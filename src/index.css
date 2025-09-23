@@ -8,10 +8,10 @@
 
 .right {
   position: absolute;
-  right: 20px;
-  width: 500px;
+  left: 400px;
+  /* width: 500px; */
 
-  padding: 10px;
+ 
 }
 @tailwind base;
 @tailwind components;
