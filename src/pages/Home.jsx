@@ -212,28 +212,49 @@ const Home = () => {
           loading="eager"
         />
         
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/20" />
+        {/* Gradient Overlay removed per request */}
         
         {/* Content */}
-        <div className="relative z-10 max-w-xl mx-auto px-4 sm:px-8">
-        <h1 className="text-2xl md:text-4xl font-extrabold text-white mb-4 md:mb-6 drop-shadow-lg">
-  <span className="text-primary-400">Brush Clean. Live Green.</span> <br />
-  Promote Your Practice <br />
-  with <br />
-  Twiggle-oral-care <br /> <span className="text-primary-400">
-              <TypeAnimation
-                sequence={['Sustainable', 2000, 'Affordable', 2000, 'Innovative', 2000]}
-                speed={50}
-                repeat={Infinity}
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Image Collage (left) */}
+          <div className="hidden lg:block">
+            <div className="relative h-[360px]">
+              <img
+                src="/images/project/ind.jpg"
+                alt="Twiggle bamboo toothbrushes on white background"
+                className="absolute top-0 left-0 w-64 h-80 object-cover rounded-xl shadow-2xl ring-1 ring-black/10"
+                loading="lazy"
               />
-            </span> 
-</h1>
-          
-          <button className="bg-primary-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 shadow-lg flex items-center gap-2 mx-auto">
-            <ShoppingBagIcon className="w-5 h-5" />
-            Shop Now
-          </button>
+              <img
+                src="/images/project/Custom branding package.jpg"
+                alt="Twiggle product collage"
+                className="absolute bottom-0 left-40 w-64 h-80 object-cover rounded-xl shadow-2xl ring-1 ring-black/10"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          {/* Text (right) */}
+          <div className="max-w-xl ml-auto">
+            <h1 className="text-2xl md:text-4xl font-extrabold text-white mb-4 md:mb-6 drop-shadow-lg" style={{ fontFamily: 'Sunborn, sans-serif' }}>
+              <span className="text-primary-400">Brush Clean. Live Green.</span><br />
+              Promote Your Practice<br />
+              with<br />
+              Twiggle-oral-care<br />
+              <span className="text-primary-400">
+                <TypeAnimation
+                  sequence={['Sustainable', 2000, 'Affordable', 2000, 'Innovative', 2000]}
+                  speed={50}
+                  repeat={Infinity}
+                />
+              </span>
+            </h1>
+
+            <button className="bg-primary-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 shadow-lg inline-flex items-center gap-2 ml-auto">
+              <ShoppingBagIcon className="w-5 h-5" />
+              Shop Now
+            </button>
+          </div>
         </div>
       </section>
 
