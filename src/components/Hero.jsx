@@ -1,6 +1,7 @@
 import React from 'react'
 import { ArrowRightIcon, SparklesIcon } from '@heroicons/react/24/outline'
 import CountUp from 'react-countup'
+import { TypeAnimation } from 'react-type-animation'
 
 const Hero = ({ onQueryClick }) => {
   return (
@@ -39,11 +40,14 @@ const Hero = ({ onQueryClick }) => {
             <span className="text-primary-400"> Sustainable Future</span>
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-xl">
-            Switch to our premium bamboo toothbrushes and eco-friendly oral care products. 
-            Made with sustainability in mind, designed for conscious consumers and dental professionals.
-          </p>
+          {/* Animated Subheadline */}
+          <div className="text-primary-200 text-lg md:text-xl">
+            <TypeAnimation
+              sequence={['Biodegradable', 1500, 'Eco-Friendly', 1500, 'Sustainable', 1500]}
+              speed={50}
+              repeat={Infinity}
+            />
+          </div>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">

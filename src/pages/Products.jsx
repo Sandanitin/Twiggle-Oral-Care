@@ -26,6 +26,20 @@ const Products = () => {
     setSelectedProduct(null);
   };
 
+  const handleSubmitInquiry = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const name = formData.get('name') || '';
+    const email = formData.get('email') || '';
+    const message = formData.get('message') || '';
+    const productName = selectedProduct?.name || 'General Inquiry';
+    const subject = `Inquiry: ${productName}`;
+    const body = `Name: ${name}\nEmail: ${email}\nProduct: ${productName}\n\n${message}`;
+    const mailto = `mailto:twiggleoralcare@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+    closeQueryForm();
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Products Section */}
@@ -101,12 +115,13 @@ const Products = () => {
             </button>
             
             <h3 className="text-lg font-medium text-gray-900 mb-4">Inquire about {selectedProduct?.name}</h3>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmitInquiry}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
                   placeholder="Your name"
                 />
@@ -116,6 +131,7 @@ const Products = () => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
                   placeholder="your@email.com"
                 />
@@ -124,6 +140,7 @@ const Products = () => {
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={4}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
                   placeholder="Your message or questions about this product..."

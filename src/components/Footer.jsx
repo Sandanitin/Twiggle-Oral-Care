@@ -8,10 +8,7 @@ const Footer = () => {
   const footerLinks = {
     products: [
       { name: 'Bamboo Toothbrushes', href: '/products' },
-      { name: 'Professional Kits', href: '/products' },
-      { name: 'Eco-Friendly Floss', href: '/products' },
-      { name: 'Travel Kits', href: '/products' },
-      { name: 'Kids Products', href: '/products' },
+      { name: 'Twiggle Mini for Kids', href: '/products' },
       { name: 'Custom Branding', href: '/products' }
     ],
     company: [

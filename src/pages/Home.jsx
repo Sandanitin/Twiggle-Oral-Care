@@ -174,8 +174,15 @@ const Home = () => {
 
   const handleSubmitInquiry = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted', selectedProduct);
+    const formData = new FormData(e.target);
+    const name = formData.get('name') || '';
+    const email = formData.get('email') || '';
+    const message = formData.get('message') || '';
+    const productName = selectedProduct?.name || 'General Inquiry';
+    const subject = `Inquiry: ${productName}`;
+    const body = `Name: ${name}\nEmail: ${email}\nProduct: ${productName}\n\n${message}`;
+    const mailto = `mailto:twiggleoralcare@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
     closeQueryForm();
   };
 
@@ -196,37 +203,40 @@ const Home = () => {
     <div className="min-h-screen bg-white">
       {/* Hero */}
      {/* Hero */}
-<section className="relative flex flex-col items-center justify-center text-center py-24 min-h-[70vh] overflow-hidden">
-  {/* Background Image */}
-  <img
-    src="/images/hero.png"
-    alt="Eco-friendly bamboo oral care products flat lay"
-    className="absolute inset-0 w-full h-full object-cover object-center scale-100 animate-slowZoom"
-    loading="eager"
-  />
-  
-  {/* Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/20" />
-  
-  {/* Content */}
-  <div className="relative z-10 max-w-xl mx-auto px-6 sm:px-8">
-     <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight drop-shadow-lg">
-       <span className="block text-primary-300">Brush Clean. Live Green.</span>
-       <span className="block text-white/90">Promote Your Practice with</span>
-       <span className="inline-block mt-2 px-3 py-1 rounded-md bg-white/5 text-white border border-white/15 shadow-sm">Twiggle-oral-care</span>
-     </h1>
-     <p className="text-lg md:text-xl text-gray-200 max-w-xl mx-auto mb-8 leading-relaxed">
-       Switch to bamboo toothbrushes for a plastic-free future with OLA Cycle.
-     </p>
-     <button 
-       onClick={() => navigate('/products')}
-       className="bg-primary-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 shadow-lg flex items-center gap-2 mx-auto"
-     >
-       <ShoppingBagIcon className="w-5 h-5" />
-       Shop Now
-     </button>
-  </div>
-</section>
+     <section className="relative flex flex-col items-center justify-center text-center py-24 h-screen overflow-hidden">
+        {/* Background Image */}
+        <img
+          src="/images/project/WhatsApp Image 2025-09-13 at 12.05.52.jpeg"
+          alt="Eco-friendly bamboo oral care products flat lay"
+          className="absolute inset-0 w-full h-full object-cover object-center scale-100 animate-slowZoom"
+          loading="eager"
+        />
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/20" />
+        
+        {/* Content */}
+        <div className="relative z-10 max-w-xl mx-auto px-6 sm:px-8">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
+            Eco-Friendly Oral Care<br/>
+            <span className="text-primary-400">
+              <TypeAnimation
+                sequence={['Sustainable', 2000, 'Affordable', 2000, 'Innovative', 2000]}
+                speed={50}
+                repeat={Infinity}
+              />
+            </span>
+          </h1>
+          <p className="text-lg md:text-xl text-gray-200 max-w-xl mx-auto mb-8 leading-relaxed">
+            Switch to bamboo toothbrushes for a plastic-free future with OLA Cycle.
+          </p>
+          <button className="bg-primary-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 shadow-lg flex items-center gap-2 mx-auto">
+            <ShoppingBagIcon className="w-5 h-5" />
+            Shop Now
+          </button>
+        </div>
+      </section>
+
 
 
       {/* Maple Wood */}
@@ -598,28 +608,19 @@ const Home = () => {
               </div>
             </div>
 
-             {/* Right Side - Image */}
-             <div className="order-first lg:order-last">
-               <div className="relative h-96 lg:h-[500px]">
-                 <img
-                   src="/images/project/ceo.png"
-                   alt="Entreprise québécoise OLA Cycle - Brosses à dents en bambou"
-                   className="w-full h-full object-cover rounded-2xl"
-                   loading="lazy"
-                 />
-                 {/* Quebec Flag Badge */}
-                 <div className="absolute top-4 left-4 bg-white px-4 py-2 rounded-full shadow-lg">
-                 
-                 </div>
-                 {/* Eco Badge */}
-                 <div className="absolute top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-full shadow-lg">
-               
-                 </div>
-                 {/* Decorative Elements */}
-                 <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-primary-100 rounded-full opacity-60"></div>
-                 <div className="absolute top-1/2 -right-8 w-16 h-16 bg-green-100 rounded-full opacity-40"></div>
-               </div>
-             </div>
+            {/* Right Side - Image */}
+            <div className="order-first lg:order-last">
+              <div className="relative h-96 lg:h-[500px]">
+                <img
+                  src="/images/project/ind.jpg"
+                  alt="Twiggle bamboo toothbrushes product showcase"
+                  className="w-full h-full object-cover rounded-2xl"
+                  loading="lazy"
+                />
+                <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-primary-100 rounded-full opacity-60"></div>
+                <div className="absolute top-1/2 -right-8 w-16 h-16 bg-green-100 rounded-full opacity-40"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -643,6 +644,7 @@ const Home = () => {
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
                   placeholder="Your name"
                   required
@@ -653,6 +655,7 @@ const Home = () => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
                   placeholder="your@email.com"
                   required
@@ -662,6 +665,7 @@ const Home = () => {
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={4}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
                   placeholder="Your message or questions about this product..."
@@ -686,3 +690,5 @@ const Home = () => {
 };
 
 export default Home;
+
+

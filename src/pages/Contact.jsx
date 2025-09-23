@@ -18,6 +18,19 @@ const Contact = () => {
     
   ]
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const firstName = formData.get('firstName') || '';
+    const lastName = formData.get('lastName') || '';
+    const email = formData.get('email') || '';
+    const subjectSel = formData.get('subject') || 'General Inquiry';
+    const message = formData.get('message') || '';
+    const subject = `Contact: ${subjectSel}`;
+    const body = `Name: ${firstName} ${lastName}\nEmail: ${email}\nSubject: ${subjectSel}\n\n${message}`;
+    window.location.href = `mailto:twiggleoralcare@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -97,7 +110,7 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="bg-white rounded-2xl shadow-lg p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -106,6 +119,7 @@ const Contact = () => {
                     <input
                       type="text"
                       required
+                      name="firstName"
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                       placeholder="John"
                     />
@@ -117,6 +131,7 @@ const Contact = () => {
                     <input
                       type="text"
                       required
+                      name="lastName"
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                       placeholder="Doe"
                     />
@@ -130,6 +145,7 @@ const Contact = () => {
                   <input
                     type="email"
                     required
+                    name="email"
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     placeholder="john@example.com"
                   />
@@ -139,7 +155,7 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Subject
                   </label>
-                  <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                  <select name="subject" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
                     <option>General Inquiry</option>
                     <option>Custom Quote Request</option>
                     <option>Bulk Order Inquiry</option>
@@ -155,6 +171,7 @@ const Contact = () => {
                   <textarea
                     rows={4}
                     required
+                    name="message"
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     placeholder="Tell us about your needs..."
                   ></textarea>
