@@ -17,6 +17,7 @@
     position: absolute;
     left: 750px;
     width: 500px;
+  
   }
 }
 @tailwind base;
@@ -77,6 +78,11 @@ body {
                      /* Fill color */
     -webkit-text-stroke: 1px black;  /* Border thickness + color */
                   /* Requested size */
+  }
+
+  /* Sunborn font utility */
+  .font-sunborn {
+    font-family: 'Sunborn', sans-serif;
   }
 
 

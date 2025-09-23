@@ -226,12 +226,12 @@ const Home = () => {
 
           {/* Text (right) */}
           <div className="max-w-xl ml-auto right ">
-            <h1 className="text-2xl md:text-4xl font-extrabold text-border lg:text-white mb-4 md:mb-6 drop-shadow-lg" style={{ fontFamily: 'Sunborn, sans-serif' }}>
-              <span className="block text-4xl md:text-5xl lg:text-4xl leading-tight text-primary-900 ">Brush Clean. Live Green.</span>
-              Promote Your Practice<br />
-              with<br />
-              Twiggle-oral-care<br />
-              <span className="text-primary-900">
+            <h1 className="text-2xl md:text-4xl font-extrabold text-border text-white lg:text-white mb-4 md:mb-6 drop-shadow-lg">
+              <span className="block text-4xl md:text-5xl lg:text-4xl leading-tight text-white md:text-primary-900 font-sunborn">Brush Clean. Live Green.</span>
+              <span className="block text-white md:text-gray-900">Promote Your Practice</span>
+              <span className="block text-white/90 md:text-gray-700">with</span>
+              <span className="block text-primary-300 md:text-primary-600">Twiggle-oral-care</span>
+              <span className="text-white md:text-primary-900">
                 <TypeAnimation
                   sequence={['Sustainable', 2000, 'Affordable', 2000, 'Innovative', 2000]}
                   speed={50}
