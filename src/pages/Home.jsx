@@ -203,7 +203,7 @@ const Home = () => {
     <div className="min-h-screen bg-white">
       {/* Hero */}
      {/* Hero */}
-     <section className="relative flex flex-col items-center justify-center text-center py-24 h-screen overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center text-center py-14 md:py-24 min-h-[60vh] md:min-h-[80vh] overflow-hidden">
         {/* Background Image */}
         <img
           src="/images/project/WhatsApp Image 2025-09-13 at 12.05.52.jpeg"
@@ -216,8 +216,8 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/20" />
         
         {/* Content */}
-        <div className="relative z-10 max-w-xl mx-auto px-6 sm:px-8">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
+        <div className="relative z-10 max-w-xl mx-auto px-4 sm:px-8">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4 md:mb-6 drop-shadow-lg">
             Eco-Friendly Oral Care<br/>
             <span className="text-primary-400">
               <TypeAnimation
@@ -227,10 +227,10 @@ const Home = () => {
               />
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-200 max-w-xl mx-auto mb-8 leading-relaxed">
+          <p className="text-base md:text-xl text-gray-200 max-w-xl mx-auto mb-6 md:mb-8 leading-relaxed">
             Switch to bamboo toothbrushes for a plastic-free future with OLA Cycle.
           </p>
-          <button className="bg-primary-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 shadow-lg flex items-center gap-2 mx-auto">
+          <button className="bg-primary-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 shadow-lg flex items-center gap-2 mx-auto">
             <ShoppingBagIcon className="w-5 h-5" />
             Shop Now
           </button>
@@ -357,7 +357,7 @@ const Home = () => {
           </motion.div>
 
           {/* Feature Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
             {featureItems.map((feature, index) => (
               <motion.div
                 key={index}
@@ -378,24 +378,24 @@ const Home = () => {
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                <div className="relative h-80 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200">
+                <div className="relative h-72 md:h-80 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200">
                   {/* Icon Container */}
-                  <div className="flex justify-center pt-8 pb-4">
-                    <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100 group-hover:scale-105 transition-transform duration-300">
+                  <div className="flex justify-center pt-6 md:pt-8 pb-4">
+                    <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100 group-hover:scale-105 transition-transform duration-300">
                       {feature.icon}
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="px-6 pb-6 h-full flex flex-col">
-                    <h3 className="text-base font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow text-center">
+                  <div className="px-5 md:px-6 pb-5 md:pb-6 h-full flex flex-col">
+                    <h3 className="text-sm md:text-base font-semibold text-gray-900 mb-2 md:mb-3">{feature.title}</h3>
+                    <p className="text-gray-600 text-xs md:text-sm leading-relaxed mb-3 md:mb-4 flex-grow text-center">
                       {feature.description}
                     </p>
                 
                     {/* Stats */}
                     <div className="mt-auto text-center">
-                      <div className="inline-flex items-center px-3 py-2 rounded-full text-xs font-medium bg-gray-100 text-gray-700 group-hover:bg-primary-100 group-hover:text-primary-700 transition-colors duration-300">
+                      <div className="inline-flex items-center px-2.5 md:px-3 py-1.5 md:py-2 rounded-full text-[10px] md:text-xs font-medium bg-gray-100 text-gray-700 group-hover:bg-primary-100 group-hover:text-primary-700 transition-colors duration-300">
                         <div className="w-2 h-2 bg-primary-500 rounded-full mr-2"></div>
                         {feature.stats}
                       </div>

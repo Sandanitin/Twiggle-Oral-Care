@@ -35,13 +35,13 @@ const About = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* About Twiggle Oral Care - First */}
-      <section className="relative py-20 bg-gradient-to-br from-primary-50 to-white">
+      <section className="relative py-16 md:py-20 bg-gradient-to-br from-primary-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6">
               From our hearts as <span className="text-primary-600">Dentists</span>, to the planet we share
             </h1>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <p className="text-base md:text-xl text-gray-600 max-w-4xl mx-auto px-2">
               Twiggle Oral Care was founded by three young dentists — a couple with a shared vision, joined by a close friend — who believe that a healthier smile shouldn’t come at the cost of a healthier planet. This is especially true for plastic toothbrushes, which most people discard every three months. Each plastic toothbrush can take over 400 years to biodegrade, and with over 1 billion plastic toothbrushes thrown away each year in the U.S. and Canada alone, that’s a staggering amount of long-lasting waste.
             </p>
           </div>

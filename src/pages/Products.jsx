@@ -46,22 +46,22 @@ const Products = () => {
       <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Products</h1>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-10 md:mb-12 px-2">
+            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4">Our Products</h1>
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
               Single-unit bamboo toothbrushes in curated variants, plus a custom branding package for clinics.
             </p>
           </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
           {products.map((product) => (
             <div 
               key={product.id}
               className={`bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col h-full ${product.comingSoon ? 'opacity-70' : ''}`}
             >
               {/* Product Image */}
-              <div className="relative w-full bg-gray-100 flex items-center justify-center p-4">
+              <div className="relative w-full bg-gray-100 flex items-center justify-center p-4 sm:p-5">
                 <img
                   src={product.imageUrl}
                   alt={product.name}
@@ -80,7 +80,7 @@ const Products = () => {
               </div>
               
               {/* Product Info */}
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-5 md:p-6 flex flex-col flex-grow">
                 <div className="flex-grow">
                   <h3 className="text-lg font-medium text-gray-900 mb-4">{product.name}</h3>
                 </div>
@@ -88,7 +88,7 @@ const Products = () => {
                 <button
                   onClick={() => !product.comingSoon && openQueryForm(product)}
                   disabled={product.comingSoon}
-                  className={`mt-4 w-full flex items-center justify-center px-4 py-3 rounded-md shadow-sm text-base font-medium transition-colors duration-200 ${product.comingSoon ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'text-white bg-green-600 hover:bg-green-700'}`}
+                  className={`mt-3 md:mt-4 w-full flex items-center justify-center px-4 py-2.5 md:py-3 rounded-md shadow-sm text-sm md:text-base font-medium transition-colors duration-200 ${product.comingSoon ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'text-white bg-green-600 hover:bg-green-700'}`}
                 >
                   <ShoppingCartIcon className="h-5 w-5 mr-2" />
                   {product.comingSoon ? 'Coming Soon' : 'Buy Now'}
