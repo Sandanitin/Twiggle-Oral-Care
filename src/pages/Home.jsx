@@ -217,19 +217,19 @@ const Home = () => {
         
         {/* Content */}
         <div className="relative z-10 max-w-xl mx-auto px-4 sm:px-8">
-          <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4 md:mb-6 drop-shadow-lg">
-            Eco-Friendly Oral Care<br/>
-            <span className="text-primary-400">
+        <h1 className="text-2xl md:text-4xl font-extrabold text-white mb-4 md:mb-6 drop-shadow-lg">
+  <span className="text-primary-400">Brush Clean. Live Green.</span> <br />
+  Promote Your Practice <br />
+  with <br />
+  Twiggle-oral-care <br /> <span className="text-primary-400">
               <TypeAnimation
                 sequence={['Sustainable', 2000, 'Affordable', 2000, 'Innovative', 2000]}
                 speed={50}
                 repeat={Infinity}
               />
-            </span>
-          </h1>
-          <p className="text-base md:text-xl text-gray-200 max-w-xl mx-auto mb-6 md:mb-8 leading-relaxed">
-            Switch to bamboo toothbrushes for a plastic-free future with OLA Cycle.
-          </p>
+            </span> 
+</h1>
+          
           <button className="bg-primary-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 shadow-lg flex items-center gap-2 mx-auto">
             <ShoppingBagIcon className="w-5 h-5" />
             Shop Now
