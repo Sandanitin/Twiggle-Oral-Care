@@ -206,7 +206,7 @@ const Home = () => {
     <section className="relative flex flex-col items-center justify-center text-center py-14 md:py-24 min-h-[60vh] md:min-h-[80vh] overflow-hidden">
         {/* Background Image */}
         <img
-          src="/images/project/WhatsApp Image 2025-09-13 at 12.05.52.jpeg"
+          src="/images/project/hi.png"
           alt="Eco-friendly bamboo oral care products flat lay"
           className="absolute inset-0 w-full h-full object-cover object-center scale-100 animate-slowZoom"
           loading="eager"
