@@ -240,7 +240,7 @@ const Home = () => {
               </span>
             </h1>
 
-            <button className="bg-primary-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 shadow-lg inline-flex items-center gap-2 ml-auto">
+            <button onClick={handleBuyNow} className="bg-primary-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 shadow-lg inline-flex items-center gap-2 ml-auto">
               <ShoppingBagIcon className="w-5 h-5" />
               Shop Now
             </button>
